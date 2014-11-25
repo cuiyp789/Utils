@@ -30,8 +30,8 @@ public class Base64Util {
             OutputStream out = new FileOutputStream(outFile);
             Base64OutputStream bout = new Base64OutputStream(out, android.util.Base64.DEFAULT);
             int len = 0;
-            byte[] buf = new byte[64];
-            while ((len = in.read(buf, 0, 64)) != -1) {
+            byte[] buf = new byte[4096];
+            while ((len = in.read(buf, 0, 4096)) != -1) {
                 bout.write(buf, 0, len);
             }
             in.close();
@@ -50,8 +50,8 @@ public class Base64Util {
             Base64InputStream bin = new Base64InputStream(in, android.util.Base64.DEFAULT);
             OutputStream out = new FileOutputStream(outFile);
             int len = 0;
-            byte[] buf = new byte[64];
-            while ((len = bin.read(buf, 0, 64)) != -1) {
+            byte[] buf = new byte[4096];
+            while ((len = bin.read(buf, 0, 4096)) != -1) {
                 out.write(buf, 0, len);
             }
             in.close();
