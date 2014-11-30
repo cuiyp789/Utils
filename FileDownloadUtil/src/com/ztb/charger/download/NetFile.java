@@ -8,7 +8,7 @@ import com.ztb.charger.download.DownloadState;
 public class NetFile implements Serializable {
 	public String url;
 	public long length;
-	public int progress;
+	public int progress = 0;
 	public int state = DownloadState.none;
 	
 	//数据库列表
